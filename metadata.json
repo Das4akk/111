@@ -1,0 +1,6 @@
+{
+  "name": "Skin to Skin — Косметика BRASH",
+  "description": "Эстетичный интернет-магазин профессиональной косметики BRASH «Skin to Skin»: натуральные формулы, дерматологический контроль, бережный уход и интеллектуальный консультант.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
