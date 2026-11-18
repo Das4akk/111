@@ -20,10 +20,10 @@ const MainApp: React.FC = () => {
   const [isAccountOpen, setIsAccountOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#FCFAF8] text-[#242220] flex flex-col font-sans selection:bg-[#EAD8D3] selection:text-[#242220]">
+    <div className="min-h-screen bg-[#0B0A0A] text-[#F5EFEA] flex flex-col font-sans selection:bg-[#D49D94]/30 selection:text-white">
       {/* Toast Notification */}
       {toast && (
-        <div className="fixed bottom-6 right-6 z-50 bg-[#242220] text-white px-5 py-3.5 rounded-2xl shadow-xl flex items-center gap-2.5 text-xs font-medium animate-fade-in border border-[#3E3B38]">
+        <div className="fixed bottom-6 right-6 z-50 bg-[#1B1817] text-[#F5EFEA] px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-2.5 text-xs font-medium animate-fade-in border border-[#332C2A]">
           <CheckCircle2 className="w-4 h-4 text-[#D49D94]" />
           <span>{toast}</span>
         </div>
@@ -33,11 +33,11 @@ const MainApp: React.FC = () => {
       <div className="fixed bottom-6 left-6 z-30">
         <button
           onClick={() => openConsultantWith()}
-          className="group flex items-center gap-2.5 px-4 py-3 bg-[#FCFAF8] hover:bg-[#F4EBE7] text-[#242220] rounded-full shadow-lg border border-[#E5D5CE] transition-all duration-300 hover:scale-105 cursor-pointer"
+          className="group flex items-center gap-2.5 px-4 py-3 bg-[#161414]/95 backdrop-blur-md hover:bg-[#221E1C] text-[#F5EFEA] rounded-full shadow-xl border border-[#332C2A] transition-all duration-300 hover:scale-105 cursor-pointer"
           aria-label="Спросить AI-дерматолога BRASH"
           title="Спросить AI-дерматолога BRASH"
         >
-          <div className="w-7 h-7 rounded-full bg-[#EAD8D3] flex items-center justify-center text-[#B3756C] group-hover:rotate-12 transition-transform">
+          <div className="w-7 h-7 rounded-full bg-[#D49D94]/15 flex items-center justify-center text-[#D49D94] group-hover:rotate-12 transition-transform">
             <Sparkles className="w-3.5 h-3.5" />
           </div>
           <span className="text-xs font-semibold tracking-wide pr-1">

@@ -21,50 +21,50 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-[#242220] text-[#FAF6F3] pt-16 pb-12 border-t border-[#3E3B38]">
+    <footer className="bg-[#060606] text-[#F5EFEA] pt-16 pb-12 border-t border-[#201C1A]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Delivery & Service Highlight Banner */}
-        <div className="bg-[#2D2A28] rounded-3xl p-7 sm:p-9 border border-[#3E3B38] mb-14 text-left flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+        <div className="bg-[#121010] rounded-3xl p-7 sm:p-9 border border-[#262220] mb-14 text-left flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
           <div className="space-y-2 max-w-2xl">
             <span className="text-xs uppercase tracking-widest text-[#D49D94] font-semibold flex items-center gap-1.5">
               <Truck className="w-3.5 h-3.5" />
               Доставка и получение заказов
             </span>
-            <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal">
+            <h3 className="font-serif text-2xl sm:text-3xl text-[#F5EFEA] font-normal">
               Курьерская доставка по Брянску от 5 000 ₽ — бесплатно
             </h3>
-            <p className="text-xs sm:text-sm text-[#A8A29E] font-light leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#A89F99] font-light leading-relaxed">
               По Брянску доставляем курьером до двери или выдаём в офисе на проспекте Ленина, д. 99. В другие города бережно отправляем транспортной компанией СДЭК. Оплата на руки при получении.
             </p>
           </div>
 
           <button
             onClick={() => scrollTo('showroom')}
-            className="px-6 py-3.5 bg-[#EAD8D3] hover:bg-[#D49D94] text-[#242220] hover:text-white rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300 cursor-pointer shadow-xs whitespace-nowrap shrink-0"
+            className="px-6 py-3.5 bg-[#D49D94] hover:bg-[#E2B4AC] text-[#121010] rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300 cursor-pointer shadow-xs whitespace-nowrap shrink-0"
           >
             Контакты офиса
           </button>
         </div>
 
         {/* Main Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 text-left pb-12 border-b border-[#3E3B38]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 text-left pb-12 border-b border-[#201C1A]">
 
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex flex-col">
-              <span className="font-serif text-3xl font-normal text-white">
+              <span className="font-serif text-3xl font-normal text-[#F5EFEA]">
                 Точка красоты
               </span>
               <span className="text-[10px] uppercase tracking-[0.25em] text-[#D49D94] font-medium -mt-1">
                 BRASH SYSTEM • Брянск
               </span>
             </div>
-            <p className="text-xs text-[#A8A29E] leading-relaxed font-light max-w-sm">
+            <p className="text-xs text-[#A89F99] leading-relaxed font-light max-w-sm">
               Профессиональная косметика BRASH SYSTEM для бережного ухода, биорепарации и восстановления естественного барьера кожи.
             </p>
-            <div className="pt-2 flex items-center gap-3 text-xs text-[#A8A29E]">
-              <span className="inline-flex items-center gap-1.5 bg-[#2D2A28] px-3 py-1.5 rounded-full border border-[#3E3B38]">
+            <div className="pt-2 flex items-center gap-3 text-xs text-[#C8BEB8]">
+              <span className="inline-flex items-center gap-1.5">
                 <ShieldCheck className="w-3.5 h-3.5 text-[#D49D94]" />
                 Официальная продукция BRASH SYSTEM
               </span>
@@ -200,15 +200,15 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom copyright & delivery/payment methods */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#7E7873]">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#968C86]">
           <div>
             © {new Date().getFullYear()} Точка красоты. Все права защищены. Магазин косметики BRASH SYSTEM.
           </div>
 
-          <div className="flex flex-wrap items-center gap-2 text-[11px] text-[#A8A29E]">
-            <span className="px-2.5 py-0.5 rounded bg-[#2D2A28] border border-[#3E3B38]">Оплата на руки при получении</span>
-            <span className="px-2.5 py-0.5 rounded bg-[#2D2A28] border border-[#3E3B38]">Курьер по Брянску</span>
-            <span className="px-2.5 py-0.5 rounded bg-[#2D2A28] border border-[#3E3B38]">СДЭК по РФ</span>
+          <div className="flex flex-wrap items-center gap-2 text-[11px] text-[#C8BEB8]">
+            <span className="px-2.5 py-0.5 rounded bg-[#121010] border border-[#262220]">Оплата на руки при получении</span>
+            <span className="px-2.5 py-0.5 rounded bg-[#121010] border border-[#262220]">Курьер по Брянску</span>
+            <span className="px-2.5 py-0.5 rounded bg-[#121010] border border-[#262220]">СДЭК по РФ</span>
           </div>
         </div>
 

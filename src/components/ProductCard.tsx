@@ -22,10 +22,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
     <div
       onClick={() => setQuickViewProduct(product)}
-      className="group bg-white rounded-3xl p-4 sm:p-5 border border-[#EFE7DE] hover:border-[#D49D94] transition-all duration-300 hover:shadow-lg flex flex-col justify-between cursor-pointer relative"
+      className="group bg-[#161414] rounded-3xl p-4 sm:p-5 border border-[#262220] hover:border-[#D49D94]/60 transition-all duration-300 hover:shadow-xl hover:shadow-black/50 flex flex-col justify-between cursor-pointer relative"
     >
       {/* Top Media Container */}
-      <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-[#FAF6F3] mb-4">
+      <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-[#0E0D0D] mb-4">
         <img
           src={product.image}
           alt={product.name}
@@ -33,9 +33,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           loading="lazy"
         />
 
-        {/* Badge (e.g. Бестселлер) */}
+        {/* Badge */}
         {product.badge && (
-          <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-xs px-2.5 py-1 rounded-full text-[10px] uppercase tracking-wider font-semibold text-[#B3756C] shadow-2xs border border-[#EFE7DE]">
+          <div className="absolute top-3 left-3 bg-[#141212]/90 backdrop-blur-xs px-2.5 py-1 rounded-full text-[10px] uppercase tracking-wider font-semibold text-[#D49D94] shadow-2xs border border-[#2E2826]">
             {product.badge}
           </div>
         )}
@@ -48,8 +48,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           }}
           className={`absolute top-3 right-3 p-2 rounded-full transition-all cursor-pointer shadow-xs ${
             isWishlisted
-              ? 'bg-[#B3756C] text-white'
-              : 'bg-white/80 hover:bg-white text-[#5A5551] hover:text-[#B3756C]'
+              ? 'bg-[#D49D94] text-[#121010]'
+              : 'bg-[#141212]/80 hover:bg-[#221E1C] text-[#C8BEB8] hover:text-[#D49D94] border border-[#2E2826]'
           }`}
           aria-label="В избранное"
         >
@@ -63,9 +63,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               e.stopPropagation();
               setQuickViewProduct(product);
             }}
-            className="w-full py-2.5 px-3 bg-white/95 hover:bg-white backdrop-blur-md rounded-xl text-xs font-medium text-[#242220] shadow-md flex items-center justify-center gap-1.5 transition-all cursor-pointer"
+            className="w-full py-2.5 px-3 bg-[#161414]/95 hover:bg-[#24201E] backdrop-blur-md rounded-xl text-xs font-medium text-[#F5EFEA] border border-[#332C2A] shadow-lg flex items-center justify-center gap-1.5 transition-all cursor-pointer"
           >
-            <Eye className="w-3.5 h-3.5 text-[#B3756C]" />
+            <Eye className="w-3.5 h-3.5 text-[#D49D94]" />
             <span>Быстрый просмотр</span>
           </button>
         </div>
@@ -75,48 +75,48 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       <div className="space-y-2 flex-1 flex flex-col justify-between text-left">
         <div>
           {/* Category & Volume */}
-          <div className="flex items-center justify-between text-[11px] text-[#7E7873] uppercase tracking-wider font-medium">
+          <div className="flex items-center justify-between text-[11px] text-[#968C86] uppercase tracking-wider font-medium">
             <span>{product.categoryLabel}</span>
-            <span className="text-[#B3756C] font-semibold">{product.volume}</span>
+            <span className="text-[#D49D94] font-semibold">{product.volume}</span>
           </div>
 
           {/* Title */}
-          <h3 className="font-serif text-lg sm:text-xl font-normal text-[#242220] group-hover:text-[#B3756C] transition-colors mt-1 line-clamp-1">
+          <h3 className="font-serif text-lg sm:text-xl font-normal text-[#F5EFEA] group-hover:text-[#D49D94] transition-colors mt-1 line-clamp-1">
             {product.name}
           </h3>
 
           {/* Russian name subtitle */}
-          <p className="text-xs text-[#5A5551] line-clamp-2 leading-relaxed mt-0.5 font-light">
+          <p className="text-xs text-[#B8AEA8] line-clamp-2 leading-relaxed mt-0.5 font-light">
             {product.ruName}
           </p>
 
           {/* Rating */}
           <div className="flex items-center gap-1.5 mt-2">
-            <div className="flex text-amber-500">
+            <div className="flex text-amber-400">
               <Star className="w-3.5 h-3.5 fill-current" />
             </div>
-            <span className="text-xs font-semibold text-[#242220]">{product.rating}</span>
-            <span className="text-[11px] text-[#7E7873]">({product.reviewsCount})</span>
+            <span className="text-xs font-semibold text-[#F5EFEA] tabular-nums">{product.rating}</span>
+            <span className="text-[11px] text-[#968C86] tabular-nums">({product.reviewsCount})</span>
           </div>
         </div>
 
         {/* Availability & Add to Cart button */}
-        <div className="pt-3 border-t border-[#EFE7DE] flex items-center justify-between gap-2 mt-3">
+        <div className="pt-3 border-t border-[#262220] flex items-center justify-between gap-2 mt-3">
           <div>
-            <span className="text-xs font-medium text-emerald-800 block">
+            <span className="text-xs font-medium text-emerald-400 block">
               {product.inStock ? 'В наличии' : 'Под заказ'}
             </span>
-            <span className="text-[11px] text-[#7E7873] block">
+            <span className="text-[11px] text-[#968C86] block">
               Оригинал BRASH
             </span>
           </div>
 
           <button
             onClick={handleAdd}
-            className={`py-2.5 px-3.5 sm:px-4 rounded-full text-xs font-medium tracking-wide flex items-center gap-1.5 transition-all duration-300 cursor-pointer shadow-xs active:scale-95 ${
+            className={`py-2.5 px-3.5 sm:px-4 rounded-full text-xs font-semibold tracking-wide flex items-center gap-1.5 transition-all duration-300 cursor-pointer shadow-xs active:scale-95 ${
               justAdded
-                ? 'bg-emerald-700 text-white'
-                : 'bg-[#F4EBE7] hover:bg-[#EAD8D3] text-[#242220]'
+                ? 'bg-emerald-600 text-white'
+                : 'bg-[#24201E] hover:bg-[#D49D94] text-[#F5EFEA] hover:text-[#121010] border border-[#36302D]'
             }`}
           >
             {justAdded ? (
@@ -126,7 +126,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               </>
             ) : (
               <>
-                <ShoppingBag className="w-3.5 h-3.5 text-[#B3756C]" />
+                <ShoppingBag className="w-3.5 h-3.5 text-[#D49D94] group-hover:text-current" />
                 <span>Купить</span>
               </>
             )}

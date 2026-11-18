@@ -55,14 +55,14 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAccount }) => {
   return (
     <>
       {/* Top micro announcement bar */}
-      <div className="bg-[#242220] text-[#F4EBE7] text-[11px] md:text-xs py-2 px-4 text-center tracking-wider font-light flex items-center justify-center gap-2">
+      <div className="bg-[#060606] text-[#C8BEB8] text-[11px] md:text-xs py-2 px-4 text-center tracking-wider font-light flex items-center justify-center gap-2 border-b border-[#1D1A18]">
         <span>Курьерская доставка по Брянску от 5 000 ₽ бесплатно</span>
         <span className="hidden sm:inline text-[#D49D94]">•</span>
         <span className="hidden sm:inline">Отправка СДЭК по всей России</span>
         <span className="hidden md:inline text-[#D49D94]">•</span>
         <button
           onClick={() => openConsultantWith('Посоветуй стартовый уход для моей кожи')}
-          className="hidden md:inline-flex items-center gap-1 text-[#D49D94] hover:text-[#EAD8D3] transition-colors underline font-medium cursor-pointer ml-1"
+          className="hidden md:inline-flex items-center gap-1 text-[#D49D94] hover:text-[#E8C5BE] transition-colors underline font-medium cursor-pointer ml-1"
         >
           <Sparkles className="w-3 h-3" />
           Спросить AI-дерматолога
@@ -73,8 +73,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAccount }) => {
       <header
         className={`sticky top-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#FCFAF8]/95 backdrop-blur-md shadow-xs border-b border-[#EFE7DE]/80 py-3.5'
-            : 'bg-[#FCFAF8] py-4.5 border-b border-transparent'
+            ? 'bg-[#0B0A0A]/95 backdrop-blur-md shadow-lg shadow-black/40 border-b border-[#24201E] py-3.5'
+            : 'bg-[#0B0A0A]/90 backdrop-blur-xs py-4.5 border-b border-[#1C1917]'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -86,10 +86,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAccount }) => {
                 className="text-left group cursor-pointer focus:outline-hidden whitespace-nowrap"
               >
                 <div className="flex flex-col">
-                  <span className="font-serif text-2xl xl:text-[28px] font-normal tracking-wide text-[#242220] group-hover:text-[#B3756C] transition-colors whitespace-nowrap">
+                  <span className="font-serif text-2xl xl:text-[28px] font-normal tracking-wide text-[#F5EFEA] group-hover:text-[#D49D94] transition-colors whitespace-nowrap">
                     Точка красоты
                   </span>
-                  <span className="text-[9px] uppercase tracking-[0.25em] text-[#7E7873] -mt-0.5 font-medium whitespace-nowrap">
+                  <span className="text-[9px] uppercase tracking-[0.25em] text-[#968C86] -mt-0.5 font-medium whitespace-nowrap">
                     BRASH SYSTEM • Брянск
                   </span>
                 </div>
@@ -97,42 +97,42 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAccount }) => {
             </div>
 
             {/* Center: Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-4 xl:gap-6 mx-4 text-[13px] tracking-wide font-medium text-[#3E3B38] whitespace-nowrap">
+            <nav className="hidden lg:flex items-center gap-4 xl:gap-6 mx-4 text-[13px] tracking-wide font-medium text-[#D6CEC8] whitespace-nowrap">
               <button
                 onClick={() => scrollTo('catalog')}
-                className="hover:text-[#B3756C] transition-colors cursor-pointer py-1 whitespace-nowrap"
+                className="hover:text-[#D49D94] transition-colors cursor-pointer py-1 whitespace-nowrap"
               >
                 Каталог
               </button>
               <button
                 onClick={() => scrollTo('brand')}
-                className="hover:text-[#B3756C] transition-colors cursor-pointer py-1 whitespace-nowrap"
+                className="hover:text-[#D49D94] transition-colors cursor-pointer py-1 whitespace-nowrap"
               >
                 О бренде BRASH
               </button>
               <button
                 onClick={() => scrollTo('benefits')}
-                className="hover:text-[#B3756C] transition-colors cursor-pointer py-1 whitespace-nowrap"
+                className="hover:text-[#D49D94] transition-colors cursor-pointer py-1 whitespace-nowrap"
               >
                 Преимущества
               </button>
               <button
                 onClick={() => scrollTo('reviews')}
-                className="hover:text-[#B3756C] transition-colors cursor-pointer py-1 whitespace-nowrap"
+                className="hover:text-[#D49D94] transition-colors cursor-pointer py-1 whitespace-nowrap"
               >
                 Отзывы
               </button>
               <button
                 onClick={() => scrollTo('showroom')}
-                className="hover:text-[#B3756C] transition-colors cursor-pointer py-1 whitespace-nowrap"
+                className="hover:text-[#D49D94] transition-colors cursor-pointer py-1 whitespace-nowrap"
               >
                 Офис в Брянске
               </button>
               <button
                 onClick={() => openConsultantWith()}
-                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F4EBE7] text-[#B3756C] hover:bg-[#EAD8D3] transition-all cursor-pointer font-medium border border-[#E5D5CE] whitespace-nowrap shrink-0"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#1C1817] text-[#D49D94] hover:bg-[#282220] transition-all cursor-pointer font-medium border border-[#362E2B] whitespace-nowrap shrink-0"
               >
-                <Sparkles className="w-3.5 h-3.5 text-[#B3756C]" />
+                <Sparkles className="w-3.5 h-3.5 text-[#D49D94]" />
                 <span>Skin AI Consultant</span>
               </button>
             </nav>
@@ -142,7 +142,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAccount }) => {
               {/* Search Toggle */}
               <button
                 onClick={() => setIsSearchOpen(!isSearchOpen)}
-                className="p-2 text-[#3E3B38] hover:text-[#B3756C] hover:bg-[#F4EBE7] rounded-full transition-colors cursor-pointer relative"
+                className="p-2 text-[#D6CEC8] hover:text-[#D49D94] hover:bg-[#1B1817] rounded-full transition-colors cursor-pointer relative"
                 aria-label="Поиск по косметике"
                 title="Поиск по косметике"
               >
@@ -152,13 +152,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAccount }) => {
               {/* Wishlist */}
               <button
                 onClick={() => scrollTo('catalog')}
-                className="p-2 text-[#3E3B38] hover:text-[#B3756C] hover:bg-[#F4EBE7] rounded-full transition-colors cursor-pointer relative"
+                className="p-2 text-[#D6CEC8] hover:text-[#D49D94] hover:bg-[#1B1817] rounded-full transition-colors cursor-pointer relative"
                 aria-label="Избранное"
                 title="Избранное"
               >
                 <Heart className="w-5 h-5" />
                 {wishlist.length > 0 && (
-                  <span className="absolute top-1 right-1 w-4 h-4 bg-[#B3756C] text-white text-[10px] font-bold rounded-full flex items-center justify-center">
+                  <span className="absolute top-1 right-1 w-4 h-4 bg-[#D49D94] text-[#121010] text-[10px] font-bold rounded-full flex items-center justify-center">
                     {wishlist.length}
                   </span>
                 )}
@@ -167,7 +167,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAccount }) => {
               {/* Account / Profile */}
               <button
                 onClick={onOpenAccount}
-                className="p-2 text-[#3E3B38] hover:text-[#B3756C] hover:bg-[#F4EBE7] rounded-full transition-colors cursor-pointer"
+                className="p-2 text-[#D6CEC8] hover:text-[#D49D94] hover:bg-[#1B1817] rounded-full transition-colors cursor-pointer"
                 aria-label="Личный кабинет"
                 title="Личный кабинет & Клуб BRASH"
               >
@@ -177,15 +177,15 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAccount }) => {
               {/* Cart Button with badge */}
               <button
                 onClick={() => setIsCartOpen(true)}
-                className="flex items-center gap-2 px-3 py-2 bg-[#242220] hover:bg-[#3E3B38] text-white rounded-full transition-all cursor-pointer shadow-xs active:scale-95"
+                className="flex items-center gap-2 px-3.5 py-2 bg-[#D49D94] hover:bg-[#E2B4AC] text-[#121010] rounded-full transition-all cursor-pointer shadow-xs active:scale-95"
                 aria-label="Корзина покупок"
               >
-                <ShoppingBag className="w-4 h-4 text-[#D49D94]" />
-                <span className="text-xs font-medium pr-1">
+                <ShoppingBag className="w-4 h-4 text-[#121010]" />
+                <span className="text-xs font-semibold pr-0.5">
                   {totalItems > 0 ? (
                     <span className="flex items-center gap-1.5">
                       <span>Корзина</span>
-                      <span className="bg-[#D49D94] text-[#242220] text-[11px] font-bold px-1.5 py-0.2 rounded-full">
+                      <span className="bg-[#121010] text-[#F5EFEA] text-[11px] font-bold px-1.5 py-0.2 rounded-full">
                         {totalItems}
                       </span>
                     </span>
@@ -198,7 +198,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAccount }) => {
               {/* Mobile hamburger menu toggle */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2 text-[#242220] hover:bg-[#F4EBE7] rounded-full transition-colors ml-1 cursor-pointer"
+                className="lg:hidden p-2 text-[#F5EFEA] hover:bg-[#1B1817] rounded-full transition-colors ml-1 cursor-pointer"
                 aria-label="Открыть меню"
               >
                 {isMobileMenuOpen ? (
@@ -213,22 +213,22 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAccount }) => {
 
         {/* Live Search Drawer / Dropdown */}
         {isSearchOpen && (
-          <div className="border-t border-[#EFE7DE] bg-[#FCFAF8] py-4 px-4 sm:px-6 shadow-md animate-fade-in">
+          <div className="border-t border-[#24201E] bg-[#111010] py-4 px-4 sm:px-6 shadow-xl animate-fade-in">
             <div className="max-w-3xl mx-auto">
               <div className="relative flex items-center">
-                <Search className="w-5 h-5 text-[#7E7873] absolute left-4" />
+                <Search className="w-5 h-5 text-[#968C86] absolute left-4" />
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Искать в каталоге BRASH SYSTEM (Валькирия, Мистик, Опен Айс, Милк Крем, Бустер)..."
-                  className="w-full pl-12 pr-10 py-3 bg-[#F4EBE7] text-[#242220] placeholder-[#7E7873] text-sm rounded-full border border-[#E5D5CE] focus:outline-hidden focus:border-[#B3756C] focus:bg-white transition-all"
+                  className="w-full pl-12 pr-20 py-3 bg-[#191615] text-[#F5EFEA] placeholder-[#968C86] text-sm rounded-full border border-[#2E2927] focus:outline-hidden focus:border-[#D49D94] focus:bg-[#1E1A19] transition-all"
                   autoFocus
                 />
                 {searchQuery && (
                   <button
                     onClick={() => setSearchQuery('')}
-                    className="absolute right-4 text-xs text-[#7E7873] hover:text-[#242220]"
+                    className="absolute right-4 text-xs text-[#968C86] hover:text-[#F5EFEA]"
                   >
                     Очистить
                   </button>
@@ -237,7 +237,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAccount }) => {
 
               {/* Search suggestions & live results */}
               {searchQuery && (
-                <div className="mt-3 bg-white rounded-2xl border border-[#EFE7DE] shadow-lg max-h-80 overflow-y-auto p-3 divide-y divide-[#F4EBE7]">
+                <div className="mt-3 bg-[#161414] rounded-2xl border border-[#2A2523] shadow-2xl max-h-80 overflow-y-auto p-3 divide-y divide-[#24201E]">
                   {searchResults.length > 0 ? (
                     searchResults.map((product) => (
                       <div
@@ -247,42 +247,42 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAccount }) => {
                           setIsSearchOpen(false);
                           setSearchQuery('');
                         }}
-                        className="py-2.5 px-3 hover:bg-[#FCFAF8] rounded-xl flex items-center justify-between cursor-pointer transition-colors"
+                        className="py-2.5 px-3 hover:bg-[#201C1B] rounded-xl flex items-center justify-between cursor-pointer transition-colors"
                       >
                         <div className="flex items-center gap-3">
                           <img
                             src={product.image}
                             alt={product.name}
-                            className="w-12 h-12 object-cover rounded-lg border border-[#EFE7DE]"
+                            className="w-12 h-12 object-cover rounded-lg border border-[#2E2927]"
                           />
                           <div>
-                            <h4 className="text-sm font-medium text-[#242220]">
+                            <h4 className="text-sm font-medium text-[#F5EFEA]">
                               {product.name}
                             </h4>
-                            <p className="text-xs text-[#7E7873] line-clamp-1">
+                            <p className="text-xs text-[#968C86] line-clamp-1">
                               {product.ruName}
                             </p>
                           </div>
                         </div>
                         <div className="text-right">
-                          <span className="text-xs font-semibold text-[#B3756C]">
+                          <span className="text-xs font-semibold text-[#D49D94]">
                             {product.volume}
                           </span>
-                          <span className="block text-[11px] text-emerald-800">
+                          <span className="block text-[11px] text-emerald-400">
                             {product.inStock ? 'В наличии' : 'Под заказ'}
                           </span>
                         </div>
                       </div>
                     ))
                   ) : (
-                    <div className="py-6 text-center text-sm text-[#7E7873]">
+                    <div className="py-6 text-center text-sm text-[#968C86]">
                       По запросу «{searchQuery}» ничего не найдено.
                       <button
                         onClick={() => {
                           setIsSearchOpen(false);
                           openConsultantWith(`Подскажи средство для: ${searchQuery}`);
                         }}
-                        className="block mx-auto mt-2 text-[#B3756C] hover:underline font-medium"
+                        className="block mx-auto mt-2 text-[#D49D94] hover:underline font-medium"
                       >
                         Спросить AI-консультанта BRASH →
                       </button>
@@ -296,42 +296,42 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAccount }) => {
 
         {/* Mobile Slide-down Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden border-t border-[#EFE7DE] bg-[#FCFAF8] px-6 py-6 space-y-4 shadow-xl">
-            <div className="flex flex-col space-y-3 text-sm font-medium text-[#3E3B38]">
+          <div className="lg:hidden border-t border-[#24201E] bg-[#111010] px-6 py-6 space-y-4 shadow-2xl">
+            <div className="flex flex-col space-y-3 text-sm font-medium text-[#D6CEC8]">
               <button
                 onClick={() => scrollTo('catalog')}
-                className="text-left py-2 border-b border-[#F4EBE7] flex items-center justify-between"
+                className="text-left py-2 border-b border-[#24201E] flex items-center justify-between"
               >
                 <span>Каталог BRASH SYSTEM</span>
-                <ArrowRight className="w-4 h-4 text-[#B3756C]" />
+                <ArrowRight className="w-4 h-4 text-[#D49D94]" />
               </button>
               <button
                 onClick={() => scrollTo('brand')}
-                className="text-left py-2 border-b border-[#F4EBE7] flex items-center justify-between"
+                className="text-left py-2 border-b border-[#24201E] flex items-center justify-between"
               >
                 <span>О бренде BRASH SYSTEM</span>
-                <ArrowRight className="w-4 h-4 text-[#B3756C]" />
+                <ArrowRight className="w-4 h-4 text-[#D49D94]" />
               </button>
               <button
                 onClick={() => scrollTo('benefits')}
-                className="text-left py-2 border-b border-[#F4EBE7] flex items-center justify-between"
+                className="text-left py-2 border-b border-[#24201E] flex items-center justify-between"
               >
                 <span>Наши преимущества</span>
-                <ArrowRight className="w-4 h-4 text-[#B3756C]" />
+                <ArrowRight className="w-4 h-4 text-[#D49D94]" />
               </button>
               <button
                 onClick={() => scrollTo('reviews')}
-                className="text-left py-2 border-b border-[#F4EBE7] flex items-center justify-between"
+                className="text-left py-2 border-b border-[#24201E] flex items-center justify-between"
               >
                 <span>Отзывы покупательниц</span>
-                <ArrowRight className="w-4 h-4 text-[#B3756C]" />
+                <ArrowRight className="w-4 h-4 text-[#D49D94]" />
               </button>
               <button
                 onClick={() => scrollTo('showroom')}
-                className="text-left py-2 border-b border-[#F4EBE7] flex items-center justify-between"
+                className="text-left py-2 border-b border-[#24201E] flex items-center justify-between"
               >
                 <span>Офис в Брянске (пр-т Ленина, 99)</span>
-                <ArrowRight className="w-4 h-4 text-[#B3756C]" />
+                <ArrowRight className="w-4 h-4 text-[#D49D94]" />
               </button>
             </div>
 
@@ -341,9 +341,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAccount }) => {
                   setIsMobileMenuOpen(false);
                   openConsultantWith();
                 }}
-                className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-[#F4EBE7] text-[#B3756C] font-semibold text-xs tracking-wider uppercase rounded-xl border border-[#E5D5CE]"
+                className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-[#1D1817] text-[#D49D94] font-semibold text-xs tracking-wider uppercase rounded-xl border border-[#362E2B]"
               >
-                <Sparkles className="w-4 h-4 text-[#B3756C]" />
+                <Sparkles className="w-4 h-4 text-[#D49D94]" />
                 Консультация с AI-дерматологом
               </button>
             </div>

@@ -122,29 +122,29 @@ export const SkinConsultantModal: React.FC = () => {
 
   return (
     <div
-      className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-xs flex items-center justify-center p-3 sm:p-6 animate-fade-in"
+      className="fixed inset-0 z-50 overflow-y-auto bg-black/75 backdrop-blur-xs flex items-center justify-center p-3 sm:p-6 animate-fade-in"
       onClick={() => setIsConsultantOpen(false)}
     >
       <div
-        className="relative bg-white rounded-3xl max-w-3xl w-full h-[90vh] max-h-[820px] flex flex-col shadow-2xl border border-[#EFE7DE] overflow-hidden text-left animate-scale-up"
+        className="relative bg-[#161414] rounded-3xl max-w-3xl w-full h-[90vh] max-h-[820px] flex flex-col shadow-2xl border border-[#2E2927] overflow-hidden text-left animate-scale-up"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}
-        <div className="bg-[#FAF6F3] p-4 sm:p-5 border-b border-[#EFE7DE] flex items-center justify-between">
+        <div className="bg-[#111010] p-4 sm:p-5 border-b border-[#262220] flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-[#EAD8D3] flex items-center justify-center text-[#B3756C] shadow-2xs">
-              <Sparkles className="w-5 h-5 text-[#B3756C]" />
+            <div className="w-10 h-10 rounded-full bg-[#241E1C] border border-[#382F2C] flex items-center justify-center text-[#D49D94] shadow-2xs">
+              <Sparkles className="w-5 h-5 text-[#D49D94]" />
             </div>
             <div>
-              <div className="flex items-center gap-2">
-                <h3 className="font-serif text-xl sm:text-2xl text-[#242220] font-normal">
+              <div className="flex items-center gap-2 flex-wrap">
+                <h3 className="font-serif text-xl sm:text-2xl text-[#F5EFEA] font-normal">
                   BRASH Skin AI Consultant
                 </h3>
-                <span className="bg-[#242220] text-white text-[10px] font-semibold px-2 py-0.5 rounded-full uppercase tracking-wider">
+                <span className="bg-[#24201E] text-[#D49D94] border border-[#362E2B] text-[10px] font-semibold px-2 py-0.5 rounded-full uppercase tracking-wider">
                   gemini-3.8-flash + search
                 </span>
               </div>
-              <p className="text-xs text-[#7E7873] font-light">
+              <p className="text-xs text-[#968C86] font-light">
                 Научно обоснованный подбор ухода и анализ ингредиентов с поиском Google
               </p>
             </div>
@@ -152,7 +152,7 @@ export const SkinConsultantModal: React.FC = () => {
 
           <button
             onClick={() => setIsConsultantOpen(false)}
-            className="p-2 rounded-full hover:bg-white text-[#7E7873] hover:text-[#242220] transition-colors cursor-pointer"
+            className="p-2 rounded-full hover:bg-[#24201E] text-[#968C86] hover:text-[#F5EFEA] transition-colors cursor-pointer"
             aria-label="Закрыть"
           >
             <X className="w-5 h-5" />
@@ -160,14 +160,14 @@ export const SkinConsultantModal: React.FC = () => {
         </div>
 
         {/* User Context Selectors (Skin Type & Concern) */}
-        <div className="bg-[#FCFAF8] px-4 py-2.5 border-b border-[#EFE7DE] flex flex-wrap items-center gap-2 sm:gap-4 text-xs">
+        <div className="bg-[#141212] px-4 py-2.5 border-b border-[#262220] flex flex-wrap items-center gap-2 sm:gap-4 text-xs">
           <div className="flex items-center gap-1.5">
-            <span className="text-[#7E7873]">Кожа:</span>
+            <span className="text-[#968C86]">Кожа:</span>
             <select
               value={skinType}
               onChange={(e) => setSkinType(e.target.value)}
               aria-label="Выбор типа кожи"
-              className="bg-white border border-[#E5D5CE] text-[#242220] rounded-lg px-2 py-1 text-xs focus:outline-hidden focus:border-[#B3756C]"
+              className="bg-[#1E1B1A] border border-[#332C2A] text-[#F5EFEA] rounded-lg px-2 py-1 text-xs focus:outline-hidden focus:border-[#D49D94]"
             >
               <option value="Чувствительная">Чувствительная</option>
               <option value="Сухая">Сухая / Обезвоженная</option>
@@ -179,12 +179,12 @@ export const SkinConsultantModal: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-1.5">
-            <span className="text-[#7E7873]">Задача:</span>
+            <span className="text-[#968C86]">Задача:</span>
             <select
               value={concern}
               onChange={(e) => setConcern(e.target.value)}
               aria-label="Выбор задачи ухода"
-              className="bg-white border border-[#E5D5CE] text-[#242220] rounded-lg px-2 py-1 text-xs focus:outline-hidden focus:border-[#B3756C]"
+              className="bg-[#1E1B1A] border border-[#332C2A] text-[#F5EFEA] rounded-lg px-2 py-1 text-xs focus:outline-hidden focus:border-[#D49D94]"
             >
               <option value="Восстановление барьера">Восстановление барьера</option>
               <option value="Глубокое увлажнение">Глубокое увлажнение</option>
@@ -197,7 +197,7 @@ export const SkinConsultantModal: React.FC = () => {
         </div>
 
         {/* Chat Messages Body */}
-        <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-5 bg-[#FCFAF8]">
+        <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-5 bg-[#0D0C0C]">
           {messages.map((msg, index) => (
             <div
               key={index}
@@ -208,8 +208,8 @@ export const SkinConsultantModal: React.FC = () => {
               <div
                 className={`max-w-[85%] rounded-3xl p-4 sm:p-5 text-sm leading-relaxed ${
                   msg.role === 'user'
-                    ? 'bg-[#242220] text-white rounded-tr-xs'
-                    : 'bg-white text-[#242220] border border-[#EFE7DE] shadow-xs rounded-tl-xs space-y-3'
+                    ? 'bg-[#D49D94] text-[#121010] font-medium rounded-tr-xs'
+                    : 'bg-[#181615] text-[#F5EFEA] border border-[#2A2523] shadow-xs rounded-tl-xs space-y-3'
                 }`}
               >
                 {/* Text with paragraph splits */}
@@ -219,9 +219,9 @@ export const SkinConsultantModal: React.FC = () => {
 
                 {/* Grounding Sources (Google Search Citations) */}
                 {msg.sources && msg.sources.length > 0 && (
-                  <div className="mt-3 pt-3 border-t border-[#EFE7DE] space-y-1.5">
-                    <span className="text-[11px] font-semibold text-[#B3756C] flex items-center gap-1 uppercase tracking-wider">
-                      <ShieldCheck className="w-3.5 h-3.5 text-[#B3756C]" />
+                  <div className="mt-3 pt-3 border-t border-[#2A2523] space-y-1.5">
+                    <span className="text-[11px] font-semibold text-[#D49D94] flex items-center gap-1 uppercase tracking-wider">
+                      <ShieldCheck className="w-3.5 h-3.5 text-[#D49D94]" />
                       Источники Google Search Grounding:
                     </span>
                     <div className="flex flex-wrap gap-1.5">
@@ -231,10 +231,10 @@ export const SkinConsultantModal: React.FC = () => {
                           href={source.uri}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 px-2.5 py-1 bg-[#FAF6F3] hover:bg-[#F4EBE7] border border-[#EFE7DE] rounded-lg text-[11px] text-[#5A5551] hover:text-[#242220] transition-colors"
+                          className="inline-flex items-center gap-1 px-2.5 py-1 bg-[#121010] hover:bg-[#24201E] border border-[#2E2927] rounded-lg text-[11px] text-[#C8BEB8] hover:text-[#F5EFEA] transition-colors"
                         >
                           <span className="truncate max-w-[200px]">{source.title}</span>
-                          <ExternalLink className="w-2.5 h-2.5 text-[#B3756C]" />
+                          <ExternalLink className="w-2.5 h-2.5 text-[#D49D94]" />
                         </a>
                       ))}
                     </div>
@@ -243,15 +243,15 @@ export const SkinConsultantModal: React.FC = () => {
 
                 {/* Suggested Products matching the query */}
                 {msg.suggestedProducts && msg.suggestedProducts.length > 0 && (
-                  <div className="mt-4 pt-3 border-t border-[#EFE7DE] space-y-2">
-                    <span className="text-[11px] font-semibold text-[#242220] uppercase tracking-wider block">
+                  <div className="mt-4 pt-3 border-t border-[#2A2523] space-y-2">
+                    <span className="text-[11px] font-semibold text-[#F5EFEA] uppercase tracking-wider block">
                       Рекомендованный уход BRASH:
                     </span>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       {msg.suggestedProducts.map((p) => (
                         <div
                           key={p.id}
-                          className="p-2.5 bg-[#FAF6F3] rounded-2xl border border-[#EFE7DE] flex items-center justify-between gap-3"
+                          className="p-2.5 bg-[#121010] rounded-2xl border border-[#2A2523] flex items-center justify-between gap-3"
                         >
                           <div
                             onClick={() => {
@@ -263,23 +263,23 @@ export const SkinConsultantModal: React.FC = () => {
                             <img
                               src={p.image}
                               alt={p.name}
-                              className="w-10 h-10 object-cover rounded-lg border border-[#EFE7DE]"
+                              className="w-10 h-10 object-cover rounded-lg border border-[#2A2523]"
                             />
                             <div className="min-w-0">
-                              <h5 className="text-xs font-semibold text-[#242220] truncate">
+                              <h5 className="text-xs font-semibold text-[#F5EFEA] truncate">
                                 {p.name}
                               </h5>
-                              <p className="text-[11px] text-[#B3756C] font-medium truncate">
+                              <p className="text-[11px] text-[#D49D94] font-medium truncate">
                                 {p.volume} • {p.categoryLabel}
                               </p>
                             </div>
                           </div>
                           <button
                             onClick={() => addToCart(p)}
-                            className="p-1.5 bg-white hover:bg-[#EAD8D3] text-[#242220] rounded-full border border-[#E5D5CE] transition-colors cursor-pointer shrink-0"
+                            className="p-1.5 bg-[#1C1918] hover:bg-[#D49D94] text-[#D49D94] hover:text-[#121010] rounded-full border border-[#332C2A] transition-colors cursor-pointer shrink-0"
                             title="В корзину"
                           >
-                            <ShoppingBag className="w-3.5 h-3.5 text-[#B3756C]" />
+                            <ShoppingBag className="w-3.5 h-3.5" />
                           </button>
                         </div>
                       ))}
@@ -291,21 +291,21 @@ export const SkinConsultantModal: React.FC = () => {
           ))}
 
           {loading && (
-            <div className="flex items-center gap-2 p-4 bg-white rounded-2xl border border-[#EFE7DE] max-w-sm text-xs text-[#7E7873]">
-              <Loader2 className="w-4 h-4 text-[#B3756C] animate-spin" />
+            <div className="flex items-center gap-2 p-4 bg-[#181615] rounded-2xl border border-[#2A2523] max-w-sm text-xs text-[#C8BEB8]">
+              <Loader2 className="w-4 h-4 text-[#D49D94] animate-spin" />
               <span>Дерматолог BRASH анализирует запрос и обращается к поиску Google...</span>
             </div>
           )}
         </div>
 
         {/* Quick Suggestion Pills */}
-        <div className="px-4 py-2 bg-[#FAF6F3] border-t border-[#EFE7DE] flex items-center gap-2 overflow-x-auto scrollbar-none">
-          <span className="text-[11px] text-[#7E7873] shrink-0 font-medium">Спросить:</span>
+        <div className="px-4 py-2 bg-[#121010] border-t border-[#262220] flex items-center gap-2 overflow-x-auto scrollbar-none">
+          <span className="text-[11px] text-[#968C86] shrink-0 font-medium">Спросить:</span>
           {quickQuestions.map((q, idx) => (
             <button
               key={idx}
               onClick={() => handleSend(q)}
-              className="px-2.5 py-1 bg-white hover:bg-[#F4EBE7] text-[#5A5551] hover:text-[#242220] text-xs rounded-full border border-[#EFE7DE] whitespace-nowrap transition-colors cursor-pointer"
+              className="px-2.5 py-1 bg-[#1C1918] hover:bg-[#24201E] text-[#C8BEB8] hover:text-[#F5EFEA] text-xs rounded-full border border-[#2E2927] whitespace-nowrap transition-colors cursor-pointer"
             >
               {q}
             </button>
@@ -313,7 +313,7 @@ export const SkinConsultantModal: React.FC = () => {
         </div>
 
         {/* Input Bar */}
-        <div className="p-4 bg-white border-t border-[#EFE7DE]">
+        <div className="p-4 bg-[#141212] border-t border-[#262220]">
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -326,15 +326,15 @@ export const SkinConsultantModal: React.FC = () => {
               value={inputPrompt}
               onChange={(e) => setInputPrompt(e.target.value)}
               placeholder="Задайте вопрос о вашей коже, составе или сочетаемости средств..."
-              className="flex-1 py-3 px-4 bg-[#FCFAF8] border border-[#E5D5CE] rounded-full text-sm text-[#242220] placeholder-[#7E7873] focus:outline-hidden focus:border-[#B3756C] focus:bg-white transition-all"
+              className="flex-1 py-3 px-4 bg-[#1E1B1A] border border-[#332C2A] rounded-full text-sm text-[#F5EFEA] placeholder-[#8A807A] focus:outline-hidden focus:border-[#D49D94] transition-all"
             />
             <button
               type="submit"
               disabled={loading || !inputPrompt.trim()}
-              className="p-3 bg-[#242220] hover:bg-[#3E3B38] disabled:opacity-50 text-white rounded-full transition-all cursor-pointer shadow-xs"
+              className="p-3 bg-[#D49D94] hover:bg-[#E2B4AC] disabled:opacity-50 text-[#121010] rounded-full transition-all cursor-pointer shadow-xs"
               aria-label="Отправить вопрос"
             >
-              <Send className="w-4 h-4 text-[#D49D94]" />
+              <Send className="w-4 h-4 text-[#121010]" />
             </button>
           </form>
         </div>

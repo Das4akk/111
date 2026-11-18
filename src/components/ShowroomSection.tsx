@@ -44,21 +44,21 @@ export const ShowroomSection: React.FC = () => {
   };
 
   return (
-    <section id="showroom" className="py-20 lg:py-28 bg-[#FAF6F3] border-b border-[#EFE7DE]/80">
+    <section id="showroom" className="py-20 lg:py-28 bg-[#0B0A0A] border-b border-[#24201E]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-          <span className="text-xs uppercase tracking-[0.25em] text-[#B3756C] font-semibold">
+          <span className="text-xs uppercase tracking-[0.25em] text-[#D49D94] font-semibold">
             Офис и шоурум
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#242220] font-normal">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#F5EFEA] font-normal">
             Офис «Точка красоты» в Брянске
           </h2>
-          <p className="text-sm sm:text-base text-[#7E7873] font-light">
+          <p className="text-sm sm:text-base text-[#A89F99] font-light">
             Ждем вас по адресу: г. Брянск, проспект Ленина, д. 99. Курьерская доставка по Брянску от 5 000 ₽ бесплатно, отправка СДЭК по всей России.
           </p>
-          <div className="w-12 h-0.5 bg-[#EAD8D3] mx-auto mt-4" />
+          <div className="w-12 h-0.5 bg-[#382F2C] mx-auto mt-4" />
         </div>
 
         {/* City Badges (when multiple showrooms exist, allow switching) */}
@@ -70,8 +70,8 @@ export const ShowroomSection: React.FC = () => {
                 onClick={() => setActiveShowroom(room)}
                 className={`px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider transition-all cursor-pointer ${
                   activeShowroom.id === room.id
-                    ? 'bg-[#242220] text-white shadow-md'
-                    : 'bg-white text-[#5A5551] hover:bg-[#F4EBE7] border border-[#EFE7DE]'
+                    ? 'bg-[#D49D94] text-[#121010] shadow-md'
+                    : 'bg-[#161414] text-[#C8BEB8] hover:bg-[#221E1C] border border-[#2E2927]'
                 }`}
               >
                 {room.city} {room.isFlagship && '• Главный офис'}
@@ -85,22 +85,22 @@ export const ShowroomSection: React.FC = () => {
           
           {/* Left: Boutique Photo */}
           <div className="lg:col-span-7 relative">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[16/10] bg-white">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-black/60 border border-[#2E2927] aspect-[16/10] bg-[#161414]">
               <img
                 src={ASSETS.showroom}
                 alt={activeShowroom.name}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
               
               <div className="absolute bottom-6 left-6 right-6 text-white text-left">
-                <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-[10px] uppercase tracking-wider font-semibold mb-2">
+                <span className="inline-block text-[10px] uppercase tracking-[0.2em] text-[#D49D94] font-semibold mb-1.5">
                   Официальный офис BRASH SYSTEM
                 </span>
-                <h3 className="font-serif text-2xl sm:text-3xl font-light">
+                <h3 className="font-serif text-2xl sm:text-3xl font-light text-[#F5EFEA]">
                   {activeShowroom.name}
                 </h3>
-                <p className="text-xs text-[#EAD8D3] mt-1 font-light">
+                <p className="text-xs text-[#C8BEB8] mt-1 font-light">
                   г. {activeShowroom.city}, {activeShowroom.address}
                   {activeShowroom.landmark ? ` • ${activeShowroom.landmark}` : ''}
                 </p>
@@ -109,48 +109,48 @@ export const ShowroomSection: React.FC = () => {
           </div>
 
           {/* Right: Showroom Details & Booking */}
-          <div className="lg:col-span-5 bg-white rounded-3xl p-6 sm:p-8 border border-[#EFE7DE] shadow-xs text-left space-y-6">
+          <div className="lg:col-span-5 bg-[#161414] rounded-3xl p-6 sm:p-8 border border-[#262220] shadow-xl shadow-black/40 text-left space-y-6">
             <div className="space-y-4">
-              <h4 className="font-serif text-2xl text-[#242220] font-normal">
+              <h4 className="font-serif text-2xl text-[#F5EFEA] font-normal">
                 г. {activeShowroom.city}, {activeShowroom.address}
               </h4>
-              <p className="text-xs sm:text-sm text-[#5A5551] leading-relaxed font-light">
+              <p className="text-xs sm:text-sm text-[#B8AEA8] leading-relaxed font-light">
                 {activeShowroom.description}
               </p>
             </div>
 
             {/* Practical Info List */}
-            <div className="space-y-3 text-xs text-[#3E3B38] border-y border-[#F4EBE7] py-4">
+            <div className="space-y-3 text-xs text-[#D6CEC8] border-y border-[#262220] py-4">
               <div className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-[#B3756C] shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#D49D94] shrink-0 mt-0.5" />
                 <div>
-                  <span className="font-medium block text-[#242220]">
+                  <span className="font-medium block text-[#F5EFEA]">
                     г. {activeShowroom.city}, {activeShowroom.address}
                   </span>
                   {activeShowroom.landmark && (
-                    <span className="text-[#7E7873]">{activeShowroom.landmark}</span>
+                    <span className="text-[#968C86]">{activeShowroom.landmark}</span>
                   )}
                 </div>
               </div>
 
               <div className="flex items-center gap-3">
-                <Clock className="w-4 h-4 text-[#B3756C] shrink-0" />
+                <Clock className="w-4 h-4 text-[#D49D94] shrink-0" />
                 <span>{activeShowroom.hours}</span>
               </div>
 
               <div className="flex items-start gap-3">
-                <Phone className="w-4 h-4 text-[#B3756C] shrink-0 mt-0.5" />
-                <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-medium text-[#242220]">
+                <Phone className="w-4 h-4 text-[#D49D94] shrink-0 mt-0.5" />
+                <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-medium text-[#F5EFEA]">
                   {activeShowroom.phones.map((p, idx) => (
                     <React.Fragment key={p.href}>
                       <a
                         href={p.href}
-                        className="hover:text-[#B3756C] transition-colors"
+                        className="hover:text-[#D49D94] transition-colors tabular-nums"
                       >
                         {p.label}
                       </a>
                       {idx < activeShowroom.phones.length - 1 && (
-                        <span className="text-[#EAD8D3]">•</span>
+                        <span className="text-[#5A504C]">•</span>
                       )}
                     </React.Fragment>
                   ))}
@@ -160,13 +160,13 @@ export const ShowroomSection: React.FC = () => {
 
             {/* Boutique Perks */}
             <div className="space-y-1.5">
-              <span className="text-[11px] uppercase tracking-wider font-semibold text-[#7E7873]">
+              <span className="text-[11px] uppercase tracking-wider font-semibold text-[#968C86]">
                 В офисе доступно:
               </span>
-              <ul className="space-y-1 text-xs text-[#5A5551]">
+              <ul className="space-y-1.5 text-xs text-[#C8BEB8]">
                 {activeShowroom.features.slice(0, 3).map((feat, i) => (
-                  <li key={i} className="flex items-baseline gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#B3756C] shrink-0" />
+                  <li key={i} className="flex items-baseline gap-2">
+                    <span className="text-[#D49D94] font-semibold">·</span>
                     <span>{feat}</span>
                   </li>
                 ))}
@@ -177,9 +177,9 @@ export const ShowroomSection: React.FC = () => {
             <div className="pt-2 flex flex-col sm:flex-row gap-3">
               <button
                 onClick={() => setIsBookingOpen(true)}
-                className="flex-1 py-3 px-4 bg-[#242220] hover:bg-[#3E3B38] text-white rounded-full text-xs font-semibold tracking-wider uppercase text-center transition-colors cursor-pointer flex items-center justify-center gap-2 shadow-xs"
+                className="flex-1 py-3 px-4 bg-[#D49D94] hover:bg-[#E2B4AC] text-[#121010] rounded-full text-xs font-semibold tracking-wider uppercase text-center transition-colors cursor-pointer flex items-center justify-center gap-2 shadow-xs"
               >
-                <Calendar className="w-3.5 h-3.5 text-[#D49D94]" />
+                <Calendar className="w-3.5 h-3.5 text-[#121010]" />
                 <span>Записаться на консультацию</span>
               </button>
 
@@ -187,36 +187,36 @@ export const ShowroomSection: React.FC = () => {
                 href={activeShowroom.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="py-3 px-4 bg-[#F4EBE7] hover:bg-[#EAD8D3] text-[#242220] rounded-full text-xs font-semibold text-center transition-colors flex items-center justify-center gap-1.5 border border-[#E5D5CE]"
+                className="py-3 px-4 bg-[#1E1A19] hover:bg-[#282321] text-[#F5EFEA] rounded-full text-xs font-semibold text-center transition-colors flex items-center justify-center gap-1.5 border border-[#332C2A]"
               >
                 <span>На карте</span>
-                <ExternalLink className="w-3.5 h-3.5 text-[#B3756C]" />
+                <ExternalLink className="w-3.5 h-3.5 text-[#D49D94]" />
               </a>
             </div>
 
             {/* Messengers */}
             <div className="flex items-center justify-between text-xs pt-1">
-              <span className="text-[#7E7873]">Мессенджеры офиса:</span>
+              <span className="text-[#968C86]">Мессенджеры офиса:</span>
               <div className="flex items-center gap-3">
                 <a
                   href={activeShowroom.telegram || '#telegram'}
                   target={activeShowroom.telegram ? '_blank' : undefined}
                   rel={activeShowroom.telegram ? 'noopener noreferrer' : undefined}
                   onClick={(e) => handleMessengerClick(e, activeShowroom.telegram, 'Telegram')}
-                  className="flex items-center gap-1 text-[#242220] hover:text-[#B3756C] font-medium cursor-pointer"
+                  className="flex items-center gap-1 text-[#F5EFEA] hover:text-[#D49D94] font-medium cursor-pointer"
                 >
-                  <Send className="w-3.5 h-3.5 text-[#24A1DE]" />
+                  <Send className="w-3.5 h-3.5 text-[#38BDF8]" />
                   <span>Telegram</span>
                 </a>
-                <span className="text-[#EAD8D3]">•</span>
+                <span className="text-[#5A504C]">•</span>
                 <a
                   href={activeShowroom.whatsapp || '#whatsapp'}
                   target={activeShowroom.whatsapp ? '_blank' : undefined}
                   rel={activeShowroom.whatsapp ? 'noopener noreferrer' : undefined}
                   onClick={(e) => handleMessengerClick(e, activeShowroom.whatsapp, 'WhatsApp')}
-                  className="flex items-center gap-1 text-[#242220] hover:text-[#B3756C] font-medium cursor-pointer"
+                  className="flex items-center gap-1 text-[#F5EFEA] hover:text-[#D49D94] font-medium cursor-pointer"
                 >
-                  <MessageCircle className="w-3.5 h-3.5 text-[#25D366]" />
+                  <MessageCircle className="w-3.5 h-3.5 text-[#4ADE80]" />
                   <span>WhatsApp</span>
                 </a>
               </div>
@@ -231,49 +231,49 @@ export const ShowroomSection: React.FC = () => {
       {/* Free Skin Consultation Booking Modal */}
       {isBookingOpen && (
         <div
-          className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 animate-fade-in"
+          className="fixed inset-0 z-50 overflow-y-auto bg-black/75 backdrop-blur-xs flex items-center justify-center p-4 animate-fade-in"
           onClick={() => setIsBookingOpen(false)}
         >
           <div
-            className="relative bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-[#EFE7DE] text-left animate-scale-up"
+            className="relative bg-[#161414] rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-[#2E2927] text-left animate-scale-up"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setIsBookingOpen(false)}
-              className="absolute top-5 right-5 p-2 rounded-full hover:bg-[#FAF6F3] text-[#7E7873] hover:text-[#242220]"
+              className="absolute top-5 right-5 p-2 rounded-full hover:bg-[#24201E] text-[#968C86] hover:text-[#F5EFEA]"
             >
               <X className="w-5 h-5" />
             </button>
 
             {bookingConfirmed ? (
               <div className="py-8 text-center space-y-3">
-                <div className="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+                <div className="w-14 h-14 rounded-full bg-emerald-950/70 text-emerald-400 border border-emerald-800/60 flex items-center justify-center mx-auto">
                   <CheckCircle className="w-8 h-8" />
                 </div>
-                <h3 className="font-serif text-2xl text-[#242220]">
+                <h3 className="font-serif text-2xl text-[#F5EFEA]">
                   Вы записаны!
                 </h3>
-                <p className="text-xs text-[#5A5551]">
+                <p className="text-xs text-[#C8BEB8]">
                   Ждем вас в офисе {activeShowroom.name} (г. {activeShowroom.city}, {activeShowroom.address}).
                 </p>
               </div>
             ) : (
               <>
                 <div className="space-y-1 mb-6">
-                  <span className="text-[10px] uppercase tracking-wider font-semibold text-[#B3756C]">
+                  <span className="text-[10px] uppercase tracking-wider font-semibold text-[#D49D94]">
                     Сервис BRASH SYSTEM • Брянск
                   </span>
-                  <h3 className="font-serif text-2xl text-[#242220] font-normal">
+                  <h3 className="font-serif text-2xl text-[#F5EFEA] font-normal">
                     Запись на подбор ухода в офисе
                   </h3>
-                  <p className="text-xs text-[#7E7873] font-light">
+                  <p className="text-xs text-[#968C86] font-light">
                     Поможем подобрать комплекс BRASH SYSTEM (PDRN, кремы, бустеры) по адресу: г. Брянск, проспект Ленина, д. 99.
                   </p>
                 </div>
 
                 <form onSubmit={handleBooking} className="space-y-4">
                   <div>
-                    <label className="block text-xs font-medium text-[#242220] mb-1">
+                    <label className="block text-xs font-medium text-[#D6CEC8] mb-1">
                       Ваше имя:
                     </label>
                     <input
@@ -282,12 +282,12 @@ export const ShowroomSection: React.FC = () => {
                       value={bookingName}
                       onChange={(e) => setBookingName(e.target.value)}
                       placeholder="Мария"
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-[#E5D5CE] text-sm text-[#242220] focus:outline-hidden focus:border-[#B3756C]"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#1E1B1A] border border-[#332C2A] text-sm text-[#F5EFEA] placeholder-[#8A807A] focus:outline-hidden focus:border-[#D49D94]"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-medium text-[#242220] mb-1">
+                    <label className="block text-xs font-medium text-[#D6CEC8] mb-1">
                       Номер телефона:
                     </label>
                     <input
@@ -296,18 +296,18 @@ export const ShowroomSection: React.FC = () => {
                       value={bookingPhone}
                       onChange={(e) => setBookingPhone(e.target.value)}
                       placeholder="+7 (999) 000-00-00"
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-[#E5D5CE] text-sm text-[#242220] focus:outline-hidden focus:border-[#B3756C]"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#1E1B1A] border border-[#332C2A] text-sm text-[#F5EFEA] placeholder-[#8A807A] focus:outline-hidden focus:border-[#D49D94]"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-medium text-[#242220] mb-1">
+                    <label className="block text-xs font-medium text-[#D6CEC8] mb-1">
                       Удобный день и время:
                     </label>
                     <select
                       value={bookingDate}
                       onChange={(e) => setBookingDate(e.target.value)}
-                      className="w-full px-3 py-2.5 rounded-xl border border-[#E5D5CE] text-xs text-[#242220] focus:outline-hidden focus:border-[#B3756C] bg-white"
+                      className="w-full px-3 py-2.5 rounded-xl bg-[#1E1B1A] border border-[#332C2A] text-xs text-[#F5EFEA] focus:outline-hidden focus:border-[#D49D94]"
                     >
                       <option value="Сегодня в 16:00">Сегодня в 16:00</option>
                       <option value="Сегодня в 18:30">Сегодня в 18:30</option>
@@ -320,11 +320,11 @@ export const ShowroomSection: React.FC = () => {
                   <div className="pt-2">
                     <button
                       type="submit"
-                      className="w-full py-3.5 bg-[#242220] hover:bg-[#3E3B38] text-white rounded-full text-xs font-semibold tracking-wider uppercase transition-colors cursor-pointer"
+                      className="w-full py-3.5 bg-[#D49D94] hover:bg-[#E2B4AC] text-[#121010] rounded-full text-xs font-semibold tracking-wider uppercase transition-colors cursor-pointer"
                     >
                       Подтвердить запись
                     </button>
-                    <span className="block text-[10px] text-center text-[#7E7873] mt-2">
+                    <span className="block text-[10px] text-center text-[#968C86] mt-2">
                       Консультация и подбор средств абсолютно бесплатны
                     </span>
                   </div>
